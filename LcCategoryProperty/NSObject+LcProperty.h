@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-extern NSString const*LcUnknownTypeException;
+extern NSString *LcAddPropertyException;
 
 @interface NSObject (LcProperty)
 /**

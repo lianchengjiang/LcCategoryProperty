@@ -9,7 +9,7 @@
 #import "NSObject+LcProperty.h"
 #import <UIKit/UIKit.h>
 
-NSString *LcUnknownTypeException = @"LcUnknownTypeException";
+NSString *LcAddPropertyException = @"LcAddPropertyException";
 
 @implementation NSObject (LcProperty)
 static inline NSString *__lc_setter_selector_name_of_property(NSString *property)
@@ -29,7 +29,10 @@ static inline NSString *__lc_setter_selector_name_of_property(NSString *property
 + (void)addObjectProperty:(NSString *)name associationPolicy:(objc_AssociationPolicy)policy
 {
     if (!name.length) {
-        return;
+        [[NSException exceptionWithName:LcAddPropertyException
+                                 reason:@"property must not be empty in +addObjectProperty:associationPolicy:"
+                               userInfo:@{@"name":name,@"policy":@(policy)}]
+         raise];
     }
 
     //1. 通过class的指针和property的name，创建一个唯一的key
@@ -62,6 +65,13 @@ static inline NSString *__lc_setter_selector_name_of_property(NSString *property
 
 + (void)addBasicProperty:(NSString *)name encodingType:(char *)type
 {
+    if (!name.length) {
+        [[NSException exceptionWithName:LcAddPropertyException
+                                 reason:@"property must not be empty in +addBasicProperty:encodingType:"
+                               userInfo:@{@"name":name,@"type":@(type)}]
+         raise];
+    }
+    
     if (strcmp(type, @encode(id)) == 0) {
         [self addObjectProperty:name];
     }
@@ -106,9 +116,10 @@ static inline NSString *__lc_setter_selector_name_of_property(NSString *property
 #undef blockWithCaseType
     
     if (!setblock || !getBlock) {
-        [[NSException exceptionWithName:LcUnknownTypeException
-                                reason:@"type is an unknown type"
-                              userInfo:@{@"name":name,@"type":@(type)}] raise];
+        [[NSException exceptionWithName:LcAddPropertyException
+                                reason:@"type is an unknown type in +addBasicProperty:encodingType:"
+                              userInfo:@{@"name":name,@"type":@(type)}]
+         raise];
     }
     
     IMP setImp = imp_implementationWithBlock(setblock);
