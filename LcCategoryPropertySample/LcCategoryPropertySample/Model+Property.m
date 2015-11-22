@@ -10,19 +10,9 @@
 #import "NSObject+LcProperty.h"
 
 @implementation Model (Property)
-@dynamic name;
-@dynamic URL;
-@dynamic date;
-@dynamic point;
-@dynamic myRect;
-@dynamic f;
-@dynamic a;
 
-+ (void)load
++ (void)categoryInitialize
 {
-    [self addObjectProperty:@"URL"];
-    [self addObjectProperty:@"date"];
-    [self addObjectProperty:@"name" associationPolicy:OBJC_ASSOCIATION_COPY_NONATOMIC];
     [self addBasicProperty:@"point" encodingType:@encode(CGPoint)];
     [self addBasicProperty:@"myRect" encodingType:@encode(CGRect)];
     [self addBasicProperty:@"f" encodingType:@encode(float)];

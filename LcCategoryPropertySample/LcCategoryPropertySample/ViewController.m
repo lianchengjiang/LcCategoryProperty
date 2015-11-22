@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Model+Property.h"
+#import "Model+second.h"
 
 @interface ViewController ()
 
@@ -24,7 +25,7 @@
     model.a = 89.2;
     model.point = CGPointZero;
     model.myRect = CGRectMake(0, 78, 67, 67);
-    NSLog(@"name%@",model.name);
+    NSLog(@"name:%@",model.name);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,10 +10,6 @@
 #import <UIKit/UIKit.h>
 
 @interface Model (Property)
-@property (nonatomic, strong)NSString *name;
-@property (nonatomic, strong)NSURL *URL;
-@property (nonatomic, strong)NSDate *date;
-
 @property (nonatomic, assign)CGPoint point;
 @property (nonatomic, assign)CGRect myRect;
 

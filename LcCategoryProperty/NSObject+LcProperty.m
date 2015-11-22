@@ -12,13 +12,14 @@
 NSString *LcAddPropertyException = @"LcAddPropertyException";
 
 @implementation NSObject (LcProperty)
+
+
 static inline NSString *__lc_setter_selector_name_of_property(NSString *property)
 {
     NSString *headCharacter = [[property substringToIndex:1] uppercaseString];
     NSString *OtherString = [property substringFromIndex:1];
     return [NSString stringWithFormat:@"set%@%@:",headCharacter,OtherString];
 }
-
 
 + (void)addObjectProperty:(NSString *)name
 {
@@ -133,4 +134,18 @@ static inline NSString *__lc_setter_selector_name_of_property(NSString *property
     result = class_addMethod([self class], NSSelectorFromString(name), getImp, [getType UTF8String]);
     assert(result);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

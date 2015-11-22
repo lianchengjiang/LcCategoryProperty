@@ -7,7 +7,13 @@
 //
 
 #import "Model.h"
+#import "NSObject+LcInvokeAllMethod.h"
 
 @implementation Model
+
++ (void)initialize
+{
+    [self invokeAllClassMethodWithSelector:@selector(categoryInitialize)];
+}
 
 @end

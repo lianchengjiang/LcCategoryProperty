@@ -18,6 +18,8 @@
 		759361111C006341000813DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759361101C006341000813DC /* Foundation.framework */; };
 		759361141C00635B000813DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759361131C00635B000813DC /* UIKit.framework */; };
 		759361171C0063AB000813DC /* NSObject+LcProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 759361161C0063AB000813DC /* NSObject+LcProperty.m */; };
+		75FC93111C01681C00194561 /* NSObject+LcInvokeAllMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC93101C01681C00194561 /* NSObject+LcInvokeAllMethod.m */; };
+		75FC93141C016EEA00194561 /* Model+second.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FC93131C016EEA00194561 /* Model+second.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,10 @@
 		759361131C00635B000813DC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		759361151C0063AB000813DC /* NSObject+LcProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LcProperty.h"; sourceTree = "<group>"; };
 		759361161C0063AB000813DC /* NSObject+LcProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LcProperty.m"; sourceTree = "<group>"; };
+		75FC930F1C01681C00194561 /* NSObject+LcInvokeAllMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LcInvokeAllMethod.h"; sourceTree = "<group>"; };
+		75FC93101C01681C00194561 /* NSObject+LcInvokeAllMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LcInvokeAllMethod.m"; sourceTree = "<group>"; };
+		75FC93121C016EEA00194561 /* Model+second.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Model+second.h"; sourceTree = "<group>"; };
+		75FC93131C016EEA00194561 /* Model+second.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Model+second.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,8 @@
 				75879F3B1C002437002A047C /* Model.m */,
 				75879F401C0032C6002A047C /* Model+Property.h */,
 				75879F411C0032C6002A047C /* Model+Property.m */,
+				75FC93121C016EEA00194561 /* Model+second.h */,
+				75FC93131C016EEA00194561 /* Model+second.m */,
 				75879F221C00228E002A047C /* AppDelegate.h */,
 				75879F231C00228E002A047C /* AppDelegate.m */,
 				75879F251C00228E002A047C /* ViewController.h */,
@@ -105,6 +113,8 @@
 			children = (
 				759361151C0063AB000813DC /* NSObject+LcProperty.h */,
 				759361161C0063AB000813DC /* NSObject+LcProperty.m */,
+				75FC930F1C01681C00194561 /* NSObject+LcInvokeAllMethod.h */,
+				75FC93101C01681C00194561 /* NSObject+LcInvokeAllMethod.m */,
 			);
 			name = LcCategoryProperty;
 			path = ../LcCategoryProperty;
@@ -190,10 +200,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				75879F421C0032C6002A047C /* Model+Property.m in Sources */,
+				75FC93141C016EEA00194561 /* Model+second.m in Sources */,
 				75879F271C00228E002A047C /* ViewController.m in Sources */,
 				75879F241C00228E002A047C /* AppDelegate.m in Sources */,
 				759361171C0063AB000813DC /* NSObject+LcProperty.m in Sources */,
 				75879F211C00228E002A047C /* main.m in Sources */,
+				75FC93111C01681C00194561 /* NSObject+LcInvokeAllMethod.m in Sources */,
 				75879F3C1C002437002A047C /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
